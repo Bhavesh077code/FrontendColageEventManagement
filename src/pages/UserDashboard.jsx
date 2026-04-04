@@ -263,6 +263,7 @@ export default function UserDashboard() {
   const [expandedId, setExpandedId] = useState(null);
   const [loading, setLoading] = useState(true);
   const [notifications, setNotifications] = useState([]);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const currentDate = new Date().toLocaleDateString();
 
@@ -356,7 +357,7 @@ export default function UserDashboard() {
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3 text-sm flex-shrink-0">
-          {/* 🔔 Bell */}
+          {/* 🔔 Bell
           <button className="p-2 hover:bg-gray-100 rounded-full bg-amber-300 relative flex-shrink-0">
             <Bell size={20} />
             {notifications.length > 0 && (
@@ -365,6 +366,43 @@ export default function UserDashboard() {
               </span>
             )}
           </button>
+          */}
+
+          {/* 🔔 Bell Icon with Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setShowDropdown((prev) => !prev)}
+              className="p-2 hover:bg-gray-100 rounded-full bg-amber-300 relative flex-shrink-0"
+            >
+              <Bell size={20} />
+              {notifications.length > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs px-1 rounded-full">
+                  {notifications.length}
+                </span>
+              )}
+            </button>
+
+            {/* 🔹 Dropdown */}
+            {showDropdown && (
+              <div className="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-200 z-50">
+                <h4 className="font-semibold px-4 py-2 border-b border-gray-200">
+                  Notifications
+                </h4>
+                <div className="max-h-60 overflow-y-auto">
+                  {notifications.length === 0 ? (
+                    <p className="text-gray-500 px-4 py-2 text-sm">No new notifications</p>
+                  ) : (
+                    notifications.map((note, idx) => (
+                      <div key={idx} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <p className="text-sm font-medium">{note.title}</p>
+                        <p className="text-xs text-gray-500">{note.description?.slice(0, 50)}...</p>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* User */}
           <span className="px-2 sm:px-3 py-1 bg-gray-100 rounded-full truncate max-w-[100px] sm:max-w-xs text-center">
