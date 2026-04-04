@@ -383,28 +383,21 @@ export default function UserDashboard() {
             </button>
 
             {/* 🔹 Mobile-Friendly Dropdown */}
+            {/* 🔹 Notification Dropdown */}
             {showDropdown && (
-              <div className="absolute right-0 mt-2 w-72 max-w-[90vw] bg-white shadow-lg rounded-lg border border-gray-200 z-50">
-                <h4 className="font-semibold px-4 py-2 border-b border-gray-200">
-                  Notifications
-                </h4>
-                <div className="max-h-60 overflow-y-auto">
-                  {notifications.length === 0 ? (
-                    <p className="text-gray-500 px-4 py-2 text-sm">No new notifications</p>
-                  ) : (
-                    notifications.map((note, idx) => (
-                      <div
-                        key={idx}
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer break-words"
-                      >
-                        <p className="text-sm font-medium">{note.title}</p>
-                        <p className="text-xs text-gray-500">
-                          {note.description?.slice(0, 50)}...
-                        </p>
-                      </div>
-                    ))
-                  )}
-                </div>
+              <div className="absolute right-0 mt-2 w-56 max-w-[90vw] bg-white shadow-lg rounded-lg overflow-hidden z-50">
+                {notifications.length === 0 ? (
+                  <p className="p-3 text-sm text-gray-500">No notifications</p>
+                ) : (
+                  notifications.map((notif) => (
+                    <div
+                      key={notif.id}
+                      className="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm text-gray-700 border-b last:border-b-0"
+                    >
+                      {notif.title}
+                    </div>
+                  ))
+                )}
               </div>
             )}
           </div>
