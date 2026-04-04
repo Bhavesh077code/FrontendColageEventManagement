@@ -319,7 +319,7 @@ export default function UserDashboard() {
     if (token) connectSocket(token);
 
     socket.on("newEvent", (data) => {
-      alert(`🔔 New Event: ${data.title}`);
+      //alert(`🔔 New Event: ${data.title}`);
 
       setNotifications((prev) => [...prev, data]);
 
