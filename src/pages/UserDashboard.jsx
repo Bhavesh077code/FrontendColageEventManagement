@@ -368,7 +368,7 @@ export default function UserDashboard() {
           </button>
           */}
 
-          {/* 🔔 Bell Icon with Dropdown */}
+          {/* 🔔 Bell Icon with Mobile-Friendly Dropdown */}
           <div className="relative">
             <button
               onClick={() => setShowDropdown((prev) => !prev)}
@@ -382,9 +382,9 @@ export default function UserDashboard() {
               )}
             </button>
 
-            {/* 🔹 Dropdown */}
+            {/* 🔹 Mobile-Friendly Dropdown */}
             {showDropdown && (
-              <div className="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-200 z-50">
+              <div className="absolute right-0 mt-2 w-72 max-w-[90vw] bg-white shadow-lg rounded-lg border border-gray-200 z-50">
                 <h4 className="font-semibold px-4 py-2 border-b border-gray-200">
                   Notifications
                 </h4>
@@ -393,9 +393,14 @@ export default function UserDashboard() {
                     <p className="text-gray-500 px-4 py-2 text-sm">No new notifications</p>
                   ) : (
                     notifications.map((note, idx) => (
-                      <div key={idx} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <div
+                        key={idx}
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer break-words"
+                      >
                         <p className="text-sm font-medium">{note.title}</p>
-                        <p className="text-xs text-gray-500">{note.description?.slice(0, 50)}...</p>
+                        <p className="text-xs text-gray-500">
+                          {note.description?.slice(0, 50)}...
+                        </p>
                       </div>
                     ))
                   )}
