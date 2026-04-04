@@ -145,7 +145,10 @@ export default function EditEvent() {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const res = await axios.get(`${BASE_URL}/event/${id}`);
+        const res = await axios.get(`${BASE_URL}/event/event/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
         setForm({
           title: res.data.event.title,
           description: res.data.event.description,
@@ -167,7 +170,15 @@ export default function EditEvent() {
     setLoading(true);
 
     try {
-      const res = await axios.put(`${BASE_URL}/event/event/edit/${id}`, form);
+      // Update event
+      const res = await axios.put(
+        `${BASE_URL}/event/event/edit/${id}`,
+        form,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
       alert(res.data.message);
       navigate("/admindashboard");
     } catch (error) {
