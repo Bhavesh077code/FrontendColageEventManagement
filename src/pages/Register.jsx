@@ -22,7 +22,6 @@ export default function Register() {
   };
 
   const handelSubmit = async () => {
-    console.log(formData);
 
     if (!formData.username || !formData.email || !formData.password) {
       setFlash({ type: "error", message: "All fields are required!" });
