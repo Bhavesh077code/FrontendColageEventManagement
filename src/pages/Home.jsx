@@ -1,5 +1,5 @@
 import HomeNavbar from "../components/HomeNavbar";
-import kit from "../../assets/hello.jpeg";
+import kit from "../assets/kiit.jpg";
 
 export default function Dashboard() {
   return (
@@ -12,7 +12,7 @@ export default function Dashboard() {
       <section
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: `url(${hello})`,
+          backgroundImage: `url(${kiit})`,
         }}
       >
         {/* Dark Overlay */}
