@@ -66,7 +66,7 @@ export default function Register() {
           </Link>
 
           <h1 className="text-2xl sm:text-3xl font-bold text-center text-indigo-700 mt-4">
-            Welcome to KIT College
+            Create Your Account
           </h1>
 
           <p className="text-center text-gray-500 mb-6 text-sm sm:text-base">

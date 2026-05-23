@@ -55,7 +55,7 @@ export default function Dashboard() {
               }}
               className="px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg shadow-2xl transition duration-300 hover:scale-105"
             >
-              Explore Events
+              Explore Features
             </button>
 
             <a
