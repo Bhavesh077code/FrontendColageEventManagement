@@ -104,7 +104,7 @@ export default function Login() {
             name="email"
             value={formData.email}
             onChange={handelChange}
-            placeholder="kit@college.com"
+            placeholder="event@college.com"
             className="w-full px-4 py-3 mb-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition"
           />
 

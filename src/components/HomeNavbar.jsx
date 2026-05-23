@@ -1,71 +1,61 @@
 const HomeNavbar = () => {
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
-      <nav className="mx-3 md:mx-8 mt-3 px-4 md:px-8 py-3 rounded-2xl 
-      backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl">
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
+      <nav className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
 
-        <div className="flex items-center justify-between">
+        {/* Logo */}
+        <a
+          href="/"
+          className="text-2xl font-bold text-gray-900 tracking-tight"
+        >
+          EventHub
+        </a>
 
-          {/* Logo */}
+        {/* Nav Links */}
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+
           <a
-            href="/"
-            className="text-2xl md:text-3xl font-extrabold tracking-tight"
+            href="#features"
+            className="hover:text-blue-600 transition"
           >
-            <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-              EventSphere
-            </span>
+            Features
           </a>
 
-          {/* Center Links */}
-          <div className="hidden md:flex items-center gap-8 text-white font-medium">
+          <a
+            href="#events"
+            className="hover:text-blue-600 transition"
+          >
+            Events
+          </a>
 
-            <a
-              href="#features"
-              className="hover:text-blue-400 transition duration-300"
-            >
-              Features
-            </a>
-
-            <a
-              href="#events"
-              className="hover:text-blue-400 transition duration-300"
-            >
-              Events
-            </a>
-
-            <a
-              href="#community"
-              className="hover:text-blue-400 transition duration-300"
-            >
-              Community
-            </a>
-
-          </div>
-
-          {/* Buttons */}
-          <div className="flex items-center gap-3">
-
-            <a
-              href="/login"
-              className="px-4 md:px-5 py-2 rounded-xl border border-white/20 
-              text-white font-medium backdrop-blur-md bg-white/10 
-              hover:bg-white/20 transition duration-300"
-            >
-              Login
-            </a>
-
-            <a
-              href="/register"
-              className="px-4 md:px-5 py-2 rounded-xl bg-gradient-to-r 
-              from-blue-600 to-purple-600 text-white font-semibold 
-              shadow-lg hover:scale-105 transition duration-300"
-            >
-              Sign Up
-            </a>
-
-          </div>
+          <a
+            href="#community"
+            className="hover:text-blue-600 transition"
+          >
+            Community
+          </a>
 
         </div>
+
+        {/* Buttons */}
+        <div className="flex items-center gap-3">
+
+          <a
+            href="/login"
+            className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-100 transition"
+          >
+            Login
+          </a>
+
+          <a
+            href="/register"
+            className="px-5 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition"
+          >
+            Sign Up
+          </a>
+
+        </div>
+
       </nav>
     </header>
   );
