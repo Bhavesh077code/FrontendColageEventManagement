@@ -1,5 +1,5 @@
 import HomeNavbar from "../components/HomeNavbar";
-import kit from "../assets/kiit.jpg";
+import kiit from "../assets/kiit.jpg";
 
 export default function Dashboard() {
   return (
