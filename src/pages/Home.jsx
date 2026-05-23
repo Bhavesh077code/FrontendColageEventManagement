@@ -1,6 +1,6 @@
 
 import HomeNavbar from "../components/HomeNavbar";
-import kit from "../assets/kit.jpg";
+import kit from "../../assets/kit.jpg";
 
 export default function Dashboard() {
   return (
@@ -13,10 +13,7 @@ export default function Dashboard() {
       <section
         className="relative h-[60vh] md:h-[70vh] flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage:`
-            url({kit.jpg}),
-            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) `
-          
+          backgroundImage:`url({kit.jpg}), `
         }}
       >
         <div className="relative text-center max-w-3xl px-4">
