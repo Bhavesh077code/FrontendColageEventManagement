@@ -142,10 +142,10 @@ export const Header = () => {
       {/* Logo */}
       <div className="flex items-center gap-2 flex-shrink-0 mb-2 sm:mb-0">
         <div className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center font-bold">
-          K
+          E
         </div>
         <h1 className="font-semibold text-lg sm:text-xl truncate">
-          KIT Events
+          Event Management
         </h1>
       </div>
 

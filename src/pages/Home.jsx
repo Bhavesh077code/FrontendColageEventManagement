@@ -66,25 +66,6 @@ export default function Dashboard() {
             </a>
           </div>
 
-          {/* Floating Stats */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            <div className="backdrop-blur-md bg-white/10 border border-white/10 rounded-3xl p-6 text-white shadow-xl">
-              <h2 className="text-3xl font-bold">50+</h2>
-              <p className="text-gray-300 mt-2">Campus Events</p>
-            </div>
-
-            <div className="backdrop-blur-md bg-white/10 border border-white/10 rounded-3xl p-6 text-white shadow-xl">
-              <h2 className="text-3xl font-bold">1000+</h2>
-              <p className="text-gray-300 mt-2">Active Students</p>
-            </div>
-
-            <div className="backdrop-blur-md bg-white/10 border border-white/10 rounded-3xl p-6 text-white shadow-xl">
-              <h2 className="text-3xl font-bold">20+</h2>
-              <p className="text-gray-300 mt-2">Communities</p>
-            </div>
-
-          </div>
         </div>
       </section>
 
