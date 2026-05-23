@@ -1,5 +1,6 @@
 
 import HomeNavbar from "../components/HomeNavbar";
+import kit from "../assets/kit.jpg";
 
 export default function Dashboard() {
   return (
@@ -12,9 +13,10 @@ export default function Dashboard() {
       <section
         className="relative h-[60vh] md:h-[70vh] flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/505490845_10234439338182474_2458782666158614479_n.jpg?stp=c120.0.720.720a_dst-jpg_s206x206_tt6&_nc_cat=106&ccb=1-7&_nc_sid=5df8b4&_nc_ohc=ngXHU4lcGhEQ7kNvwGnau83&_nc_oc=AdqzPPqMwXKpeX_MXSsKgMtll4dKWNQTjy09Z24kMMLbEpvi0E8WRD_Zu0Z9N_uPtteiUWUN-4uXx5_7W05IITMb&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=anXs3RgBkIlNRqDnzLciRA&_nc_ss=7a3a8&oh=00_Af1CsZa_h-ioczDJe6Rh6mqxT8hv8H896CINACmUM5qu2A&oe=69D662A5 ')",
-
+          backgroundImage:`
+            url({kit.jpg}),
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) `
+          
         }}
       >
         <div className="relative text-center max-w-3xl px-4">
