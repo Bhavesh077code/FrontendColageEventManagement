@@ -6,7 +6,7 @@ const HomeNavbar = () => {
 
                 {/* Logo */}
                 <h1 className="text-lg md:text-2xl font-bold whitespace-nowrap">
-                    KIT Events
+                    Events Platform
                 </h1>
 
                 {/* Buttons */}

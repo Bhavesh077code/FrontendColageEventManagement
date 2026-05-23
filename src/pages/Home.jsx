@@ -10,7 +10,7 @@ export default function Dashboard() {
 
       {/* HERO SECTION */}
       <section
-        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+        className="relative z-0 w-full md:h-screen h-auto min-h-screen flex items-center justify-center bg-cover bg-center"
         style={{
           backgroundImage: `url(${kiit})`,
         }}
