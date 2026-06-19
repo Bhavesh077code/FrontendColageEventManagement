@@ -145,6 +145,7 @@ const UploadEvent = () => {
   const [imageFile, setImageFile] = useState(null);
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [videoFile, setVideoFile] = useState(null);
 
   const navigate = useNavigate();
 
