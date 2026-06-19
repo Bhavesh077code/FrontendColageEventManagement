@@ -1,4 +1,3 @@
-
 //EVENT ID
 /*
 import { useEffect, useState } from "react";
@@ -241,9 +240,6 @@ export default function Dashboard() {
 }
 */
 
-
-
-
 import { useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { socket, connectSocket } from "../socket";
@@ -327,16 +323,13 @@ export default function Dashboard() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch(
-        `${BASE_URL}/event/event/delete/${id}`,
-        {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const res = await fetch(`${BASE_URL}/event/event/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       if (!res.ok) {
         const text = await res.text();
@@ -350,7 +343,6 @@ export default function Dashboard() {
 
       // 🔥 UI update instantly
       setEvents((prev) => prev.filter((event) => event._id !== id));
-
     } catch (error) {
       console.error(error);
     }
@@ -410,14 +402,28 @@ export default function Dashboard() {
                   className="bg-white rounded-2xl shadow overflow-hidden"
                 >
                   <div className="relative">
-                    <img
-                      src={
-                        event.image ||
-                        "https://via.placeholder.com/400x200"
-                      }
-                      alt={event.title}
-                      className="w-full h-48 object-cover"
-                    />
+                    {event.image && (
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="w-full h-48 object-cover"
+                      />
+                    )}
+
+                    {event.video && (
+                      <video controls className="w-full max-h-80 bg-black">
+                        <source src={event.video} />
+                      </video>
+                    )}
+
+                    {!event.image && !event.video && (
+                      <img
+                        src="https://via.placeholder.com/400x200"
+                        alt="No media"
+                        className="w-full h-48 object-cover"
+                      />
+                    )}
+
                     <span className="absolute top-3 right-3 bg-white px-3 py-1 rounded-full text-sm shadow">
                       {currentDate}
                     </span>
@@ -441,7 +447,7 @@ export default function Dashboard() {
                       <button
                         onClick={() =>
                           setExpandedId(
-                            expandedId === event._id ? null : event._id
+                            expandedId === event._id ? null : event._id,
                           )
                         }
                         className="text-blue-600 text-sm font-medium mt-1"
@@ -475,6 +481,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-
-
