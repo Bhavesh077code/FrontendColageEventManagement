@@ -450,20 +450,7 @@ export default function UserDashboard() {
               <div
                 key={event._id}
                 className="bg-white rounded-2xl shadow overflow-hidden"
-              >{/*}
-                <div className="relative">
-                  <img
-                    src={
-                      event.image ||
-                      "https://via.placeholder.com/400x200"
-                    }
-                    alt={event.title || "Event"}
-                    className="w-full h-48 object-cover"
-                  />
-                  <span className="absolute top-3 right-3 bg-white px-3 py-1 rounded-full text-sm shadow">
-                    {currentDate}
-                  </span>
-                </div>*/}
+              >
                 <div className="relative">
                     {event.image && (
                       <img
