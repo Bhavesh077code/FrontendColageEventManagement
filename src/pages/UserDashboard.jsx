@@ -450,7 +450,7 @@ export default function UserDashboard() {
               <div
                 key={event._id}
                 className="bg-white rounded-2xl shadow overflow-hidden"
-              >
+              >{/*}
                 <div className="relative">
                   <img
                     src={
@@ -463,7 +463,34 @@ export default function UserDashboard() {
                   <span className="absolute top-3 right-3 bg-white px-3 py-1 rounded-full text-sm shadow">
                     {currentDate}
                   </span>
-                </div>
+                </div>*/}
+                <div className="relative">
+                    {event.image && (
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="w-full h-48 object-cover"
+                      />
+                    )}
+
+                    {event.video && (
+                      <video controls className="w-full max-h-80 bg-black">
+                        <source src={event.video} />
+                      </video>
+                    )}
+
+                    {!event.image && !event.video && (
+                      <img
+                        src="https://via.placeholder.com/400x200"
+                        alt="No media"
+                        className="w-full h-48 object-cover"
+                      />
+                    )}
+
+                    <span className="absolute top-3 right-3 bg-white px-3 py-1 rounded-full text-sm shadow">
+                      {currentDate}
+                    </span>
+                  </div>
 
                 <div className="p-4">
                   <h3 className="text-xl font-semibold">
