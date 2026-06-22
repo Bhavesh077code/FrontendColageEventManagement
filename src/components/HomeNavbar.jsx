@@ -49,7 +49,7 @@ const HomeNavbar = () => {
 
           <a
             href="/register"
-            className="px-5 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition"
+            className="px-5 py-2 rounded-lg bg-black text-white text-sm font-medium hover:bg-blue-700 transition"
           >
             Sign Up
           </a>
